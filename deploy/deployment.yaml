@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: empstore
+  name: empstore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: empstore
+  template:
+    metadata:
+      labels:
+        app: empstore
+    spec:
+      containers:
+        - image: mounika0702/employeestore:v1
+          name: empstore
